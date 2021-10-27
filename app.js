@@ -1,11 +1,14 @@
-const num1 = 6;
-const num2 = '6';
 
-const value = num1 == num2
-const value2 = num1 === num2
+const name ='peter';
+const age = 24;
 
-console.log(value);
-console.log(value2);
+if(name === 'peter' && age === 24) {
+    console.log('hello there user');
+} else {
+    console.log('wrong values');
+}
+
+// || is OR and && is AND
 
 // == is same value, === is same value and same type
 
