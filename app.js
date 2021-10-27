@@ -1,30 +1,16 @@
-let money = 10;
+let text = '     Peter Jordanson';
+let textLowerCase = text.toLowerCase();
+let textUpperCase = text.toUpperCase();
 
-do {
-    console.log('Ive got ' + money + ' so Im going to the shop');
-    money--;
-} while(money > 0);
 
-// do {} while () always runs once
-
-// || is OR and && is AND
-
-// == is same value, === is same value and same type
-
-// !value for not conditional
-
-// if (condition){output;} else {output2;}
-
-// const variableName = (parameter1, parameter2) => (parameter1 * parameter2) 
-
-// console.log(hello());
-
-// var names can start with either letter, _ or $
-// typeof to find type of
-
-/*
-
-function hello(name, lastName){
-    console.log('Hello my dear, ' + name + lastName);
-}
-*/
+console.log(textLowerCase); // text-transform: uppercase;
+console.log(textUpperCase); // text-transform: lowercase;
+console.log(text.charAt(2)); // return the value at specified index
+console.log(text.charAt(12).toUpperCase()); 
+console.log(text.charAt(text.length-1)); 
+console.log(text.indexOf('J')); // returns index of passed value
+console.log(text.trim()); // trims whitespace from start and end of string
+console.log(text.trim().startsWith('Peter')); // returns true or false if it starts with passed value
+console.log(text.includes('ete')); // returns true or false if string has specified value within
+console.log(text.slice(8, 12)); // index slicing (starts at 0)
+console.log(text.slice(-4)); // index slicing reversed
