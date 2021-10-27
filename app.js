@@ -1,28 +1,11 @@
-const dice = 1;
+let money = 10;
 
-// if (dice === 1){
-//     console.log('you got one');
-// }
-// else if (dice === 2){
-//     console.log('you got two');
-// }
-// else {
-//     console.log("you didn't roll the dice");
-// }
+do {
+    console.log('Ive got ' + money + ' so Im going to the shop');
+    money--;
+} while(money > 0);
 
-switch(dice){
-    case 1:
-        console.log('you got one');
-        break;
-    case 2:
-        console.log('you got two');
-        break;
-    case 3:
-        console.log('you got three');
-        break;
-    default:
-        console.log('you did not roll');
-}
+// do {} while () always runs once
 
 // || is OR and && is AND
 
