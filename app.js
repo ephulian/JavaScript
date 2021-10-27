@@ -1,21 +1,17 @@
-function addValues(num1, num2){
-    return num1 + num2;
-}
+const num1 = 6;
+const num2 = '6';
 
-const firstValue = addValues(3, 11);
-const secondValue = addValues(23, 84);
+const value = num1 == num2
+const value2 = num1 === num2
 
-const add = function (num1, num2) {
-    return num1 + num2;
-}
+console.log(value);
+console.log(value2);
 
-const thirdValue = add(5, 84)
+// == is same value, === is same value and same type
 
-const values = [firstValue, secondValue, (add(10, 10)+add(20, 20))];
-console.log(values);
+// !value for not conditional
 
-const multiply = (num1, num2) => (num1 * num2)
-
+// if (condition){output;} else {output2;}
 
 // const variableName = (parameter1, parameter2) => (parameter1 * parameter2) 
 
