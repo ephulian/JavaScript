@@ -1,19 +1,20 @@
-let names = ['john', 'peter', 'bob', 'barry', 'james', 'glen', 4, 2, 1];
-let lastNames = ['peper', 'onion', 'phone', 'clamp'];
+const names = ['anna', 'suzy', 'bob'];
+const lastNames = 'shaakenbake';
 
-console.log(names.length); // returns length of array
-console.log(names[4]); // returns value at specific index (starting at 0)
-console.log(names[names.length - 6]); // returns value at specific index (reversed)
+let newArray = [];
+let newArray2 = [];
 
-console.log(names.concat(lastNames)); // appends specified array
-console.log(names.reverse()); // reverses array
+// for loop
 
-console.log(names.unshift('suzy')); // adds to beggining of array
-console.log(names.shift()); // removes first item in array
+for (let i = 0; i < names.length; i++){
+    console.log(i);
+    const fullName = `${names[i]} ${lastNames}` 
+    newArray.push(fullName)
+}
 
-console.log(names.push('anna')); // appends to end of array
-console.log(names.pop()); // removes from end of array
+for (const element of names){
+    newArray2.push(element);
+}
 
-console.log(names.splice(0, 3)); // mutates original array!!
-
-console.log(names);
+console.log(newArray);
+console.log(newArray2);
