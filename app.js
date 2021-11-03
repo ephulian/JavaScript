@@ -1,20 +1,8 @@
-const names = ['anna', 'suzy', 'bob'];
-const lastNames = 'shaakenbake';
+// undefined - is when js doesn't find a value
+// null - developer sets the value
 
-let newArray = [];
-let newArray2 = [];
+let number = 20 + null; // 20 + 0;
+let number2 = 20 + undefined; // 20 + 0;
 
-// for loop
-
-for (let i = 0; i < names.length; i++){
-    console.log(i);
-    const fullName = `${names[i]} ${lastNames}` 
-    newArray.push(fullName)
-}
-
-for (const element of names){
-    newArray2.push(element);
-}
-
-console.log(newArray);
-console.log(newArray2);
+console.log(number);
+console.log(number2);
