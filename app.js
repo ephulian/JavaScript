@@ -1,22 +1,18 @@
-// unary operator - typeof
+// Global vs Local Scope
+// any variable outside code block {} is GLOBAL
+// accessed anywhere in program
+// AVOID: Name collisions, Unwanted Modifications
 
-let text = 'some text';
-console.log(typeof text); //operand
+let name = 'bobo';
+name = 'peter';
 
-
-// binary operator - assignment
-let number = 3;
-let number2 = 2 + 5;
-
-// ternary operartor
-// condition ? (runs if true) : (runs if false)
-
-const value = 1 < 0;
-
-if(value) {
-    console.log('value is true');
-} else {
-    console.log('value si false');
+const calculate = function(){
+    // console.log(name);
+    name = 'orange';
 }
 
-1 > 0 ? console.log('value is true'):console.log('value is false');
+console.log(`my name is ${name}`);
+
+calculate();
+
+console.log(`my name is ${name}`);
