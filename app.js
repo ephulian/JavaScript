@@ -1,13 +1,22 @@
-// truth and falsy
-// "", '', ``, 0, -0, NaN, false, null, undefined - return Falsy
+// unary operator - typeof
 
-const bool1 = true;
-const bool2 = 2 > 1;
+let text = 'some text';
+console.log(typeof text); //operand
 
-const text = '';
 
-if(text){
-    console.log(`Truthy!`);
+// binary operator - assignment
+let number = 3;
+let number2 = 2 + 5;
+
+// ternary operartor
+// condition ? (runs if true) : (runs if false)
+
+const value = 1 < 0;
+
+if(value) {
+    console.log('value is true');
 } else {
-    console.log(`Falsy`);
+    console.log('value si false');
 }
+
+1 > 0 ? console.log('value is true'):console.log('value is false');
