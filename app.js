@@ -1,8 +1,13 @@
-// undefined - is when js doesn't find a value
-// null - developer sets the value
+// truth and falsy
+// "", '', ``, 0, -0, NaN, false, null, undefined - return Falsy
 
-let number = 20 + null; // 20 + 0;
-let number2 = 20 + undefined; // 20 + 0;
+const bool1 = true;
+const bool2 = 2 > 1;
 
-console.log(number);
-console.log(number2);
+const text = '';
+
+if(text){
+    console.log(`Truthy!`);
+} else {
+    console.log(`Falsy`);
+}
