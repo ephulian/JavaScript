@@ -1,23 +1,21 @@
-// Local Variables
-// if - NOT VAR
-// if const or let not used EVEN within code block var is still global
-// can create code blocks (locals) with curly braces only 
+// Variable lookup
+// {} - code blocks
 
-let name = 'bobo';
+const globalNumber = 10;
 
-function calculate(){
-    const name = 'john';
-    const age = 25;
+function add(num1, num2){
+    const globalNumber = 100; 
+    const result = num1 + num2 + globalNumber;
+    // return result;
 
-    becomesGlobal = 'global variable'
+    function multiply (){
+        // const globalNumber = 1000;
+        const multiplyResult = result * globalNumber;
+        console.log(multiplyResult);
+    }
+
+    multiply();
+    return result;
 }
 
-calculate();
-
-console.log(becomesGlobal);
-
-if (true){
-    const name='john';
-}
-
-console.log(`this is ${name}`);
+console.log(add(3, 4));
