@@ -1,21 +1,23 @@
-// Variable lookup
-// {} - code blocks
+// function greetMorning(name){
+//     const myName = 'Kiril';
+//     console.log(`Good morning ${name}, my name is ${myName}`);
+// }
 
-const globalNumber = 10;
+// function greetAfternoon(name){
+//     const myName = 'Kiril';
+//     console.log(`Good afternoon ${name}, my name is ${myName}`);
+// }
 
-function add(num1, num2){
-    const globalNumber = 100; 
-    const result = num1 + num2 + globalNumber;
-    // return result;
+const currentTime = 12
 
-    function multiply (){
-        // const globalNumber = 1000;
-        const multiplyResult = result * globalNumber;
-        console.log(multiplyResult);
-    }
+const morning = (name) => `Good morning ${name}`;
+const afternoon = (name) => `Good afternoon ${name}`;
+const evening = (name) => `Good evening ${name}`;
 
-    multiply();
-    return result;
+function greet(name, callback){
+    const myName = 'Kiril';
+    console.log(`${callback(name)}, my name is ${myName}!`);
+    callback();
 }
 
-console.log(add(3, 4));
+greet('Bobo', evening)
