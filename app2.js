@@ -14,4 +14,4 @@ const youngPerson = people.find((cunt) => cunt.age === 40)
 console.log(youngPerson);
 
 // filter returns an array full of objects
-// find returns an object
+// find returns an object (and always the first match)
