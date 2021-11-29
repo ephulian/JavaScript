@@ -1,30 +1,22 @@
-// Date
+const btn = document.getElementById('btn');
+const body = document.getElementById('body');
 
-const months = [
-    'January',
-    'Febuary',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-];
+const getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+}
 
-const days = Array.from(Array(31).keys()).map(x => x + 1);
+const randColorPicker = () => {
+    const x = getRandomInt(0, 256);
+    const y = getRandomInt(0, 256);
+    const z = getRandomInt(0, 100);
 
+    return `hsl(${x}, ${y}%, ${z}%)`;
 
-const date = new Date();
-const month = date.getMonth();
-const day = date.getDay();
+}
 
-const sentence = `${months[month]}, ${date.getDate()}`
-
-console.log(sentence);
-console.log(date);
-// const test = Array(31).keys();
-// console.log(...test);
+btn.onclick = function(){
+    body.style.backgroundColor = randColorPicker()
+    console.log(randColorPicker());
+}
