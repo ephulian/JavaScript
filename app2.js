@@ -1,15 +1,30 @@
-// Math
-// Standard built-in objects - always available
-// Math.random returns a value between 0 and 1 (but never 1) 
-// multiply to move the decimal point and floor or ceil to round up or down
+// Date
+
+const months = [
+    'January',
+    'Febuary',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+];
+
+const days = Array.from(Array(31).keys()).map(x => x + 1);
 
 
-const number = 4.56789;
+const date = new Date();
+const month = date.getMonth();
+const day = date.getDay();
 
-const result = Math.ceil(number);
+const sentence = `${months[month]}, ${date.getDate()}`
 
-console.log(result);
-
-const randInt = Math.floor(Math.random() * 10 + 1);
-
-console.log(randInt);
+console.log(sentence);
+console.log(date);
+// const test = Array(31).keys();
+// console.log(...test);
