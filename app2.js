@@ -7,8 +7,8 @@ const people = [
 ];
 
 const bob = people.reduce((acc, currItem) => {
-    console.log(acc);
-    console.log(currItem);
+    console.log(acc)
+    console.log(currItem)
     return acc
 }, 0)
 
@@ -17,9 +17,13 @@ const items = [
     {name:'book', price:20},
     {name:'chicken', price:10},
     {name:'pork', price:100},
-];
+]
 
 const reducer = (total, item) => total + item
 
 let total = items.reduce(reducer, 0)
-console.log(total);
+console.log(total)
+
+// const var = object.reduce(function(acc, curr){}, start)
+// acc = total of all calculations
+// curr = current iteration
