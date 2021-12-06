@@ -1,22 +1,9 @@
-const btn = document.getElementById('btn');
-const body = document.getElementById('body');
+const result = document.querySelector('#result')
+const allChildren = result.childNodes;
+const children = result.children;
 
-const getRandomInt = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min);
-}
+console.log(...children);
+console.log(result);
 
-const randColorPicker = () => {
-    const x = getRandomInt(0, 256);
-    const y = getRandomInt(0, 256);
-    const z = getRandomInt(0, 100);
-
-    return `hsl(${x}, ${y}%, ${z}%)`;
-
-}
-
-btn.onclick = function(){
-    body.style.backgroundColor = randColorPicker()
-    console.log(randColorPicker());
-}
+console.log(result.firstChild);
+console.log(result.lastChild);
