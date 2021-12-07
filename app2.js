@@ -1,8 +1,10 @@
-try {                                           // try to run this => {}
-    throw new Error                             // throw error
-    console.log('works');                       // code
-} catch (error) {                               // runs if try doesn't
-    console.log('broke');
-} finally {                                     // always runs despite try or catch
-    console.log('always works');
+const expression = 'cat';
+
+switch(expression){
+    case 'dog':                         // if value is 'dog' run this
+        console.log('bark');
+        break
+    case 'cat':                         // if value is 'cat' run this
+        console.log('meow');
+        break
 }
