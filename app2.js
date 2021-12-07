@@ -1,10 +1,9 @@
-const expression = 'cat';
+const item = document.getElementById('special');
+const value = item.childNodes.nextSibling; //?
+const easyValue = item.textContent //?
 
-switch(expression){
-    case 'dog':                         // if value is 'dog' run this
-        console.log('bark');
-        break
-    case 'cat':                         // if value is 'cat' run this
-        console.log('meow');
-        break
-}
+console.log(value);
+
+
+// nodeValue outputs the value of the selected child
+// textContent outputs the value directly
