@@ -1,17 +1,12 @@
 const first = document.getElementById('first');
 const second = document.getElementById('second');
 const third = document.getElementById('third');
+const result = document.getElementById('result');
 
-const classValue = first.className // Returns the class of the object
+// create empty element
+const bodyDiv = document.createElement('div');
 
-second.className = "blue";
-
-const classValues = third.classList // Returns list of all classes of the object
-
-third.classList.add('blue'); // add a class
-third.classList.add('blue', 'text'); // add another class
-third.classList.remove('text'); // removes a class
-
-let result = third.classList.contains('text'); // returns true or false if object contains specified class
-
-result ? console.log('does contain') : console.log('does not contain');
+// create text node
+const text = document.createTextNode('simple body div');
+bodyDiv.appendChild(text)  // append text to div
+document.body.appendChild(bodyDiv) // append div to document > body
