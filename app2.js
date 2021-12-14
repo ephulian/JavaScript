@@ -3,9 +3,7 @@ const second = document.getElementById('second');
 const third = document.getElementById('third');
 const result = document.getElementById('result');
 
-const newListElement = document.createElement('li');
-const blueberry = document.createTextNode('blueberry')
+const num = 2000
 
-// insertBefore (first value is item inserted, second value is before which item)
-result.insertBefore((newListElement.appendChild(blueberry)), second)
-document.body.appendChild(result)
+// innerText change the text inside the object
+third.innerText = `blueberry ${num}` 
