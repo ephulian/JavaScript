@@ -3,7 +3,12 @@ const second = document.getElementById('second');
 const third = document.getElementById('third');
 const result = document.getElementById('result');
 
-first.remove() // remove any
+// returns the text content
+console.log(third.textContent); 
 
-result.removeChild(second) // remove child
+// returns the whole html structure
+console.log(result.innerHTML); 
 
+const ul = document.createElement('ul'); // create new element
+ul.innerHTML = `<li>new list item</li>` // populate with HTML
+document.body.appendChild(result.appendChild(ul)) // append to DOM
