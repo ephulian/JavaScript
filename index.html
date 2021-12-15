@@ -9,7 +9,7 @@
         body{
             background:rgb(59, 59, 59);
             color:white;
-            font-size: 3rem;
+            font-size: 2rem;
         }
         .red{
             color:red;
@@ -17,6 +17,10 @@
         
         .blue{
             color:blue;
+        }
+
+        .btn{
+            background-color: white;
         }
     </style>
 </head>
@@ -28,6 +32,9 @@
         <li id="special">pear</li>
         <li id="special">tomato</li>
     </ul>
+    <h2>events in js</h2>
+    <p onclick="this.classList.add('red')">i can trigger events</p>
+    <button class="btn">click me</button>
     <script src="./app2.js"></script>
 </body>
 </html>
