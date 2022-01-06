@@ -1,23 +1,10 @@
-const first = document.getElementById('first');
-const second = document.getElementById('second');
-const third = document.getElementById('third');
+const heading = document.querySelector('h2')
 
-const result = document.getElementById('result');
-
-const button = document.querySelector('.btn');
-
-
-button.addEventListener('click', () => {
-    let currentColor = button.getAttribute('class').split(' ')[1] //?
-    console.log(currentColor); //?
-    switch(currentColor){
-        case 'red':
-            button.removeAttribute('red')
-            button.setAttribute('class', 'blue')
-            break
-        case 'blue':
-            button.removeAttribute('blue')
-            button.setAttribute('class', 'red')
-            break
-    }
+heading.addEventListener('click', e => {
+    console.log(e);
+    e.currentTarget.classList.contains('blue') ? e.currentTarget.classList.remove('blue') : e.currentTarget.classList.add('blue')
+    e.offsetX
+    console.log(e.offsetX);
 })
+
+// currentTarget selects the element which invoked the event
