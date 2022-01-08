@@ -6,34 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            background:rgb(59, 59, 59);
-            color:white;
-            font-size: 2rem;
-        }
-        .red{
-            color:red;
-        }
-        
-        .blue{
-            color:blue;
+        div {
+            font-size:5rem;
         }
 
-        .btn{
-            background-color: white;
+        #parent {
+            border: 2px solid green;
+            height: 400px;
+        }
+
+        #child {
+            border: 2px solid blue;
+        }
+        #other {
+            border: 2px solid red;
         }
     </style>
 </head>
-<body id="body">
-    <ul id="result">
-        <li id="first" class="red">apple</li>
-        <li id="second">orange</li>
-        <li id="third">banana</li>
-        <li id="special">pear</li>
-        <li id="special">tomato</li>
-    </ul>
-    <h2>events in js</h2>
-    <button class="btn">click me</button>
+<body>
+    <div id="main">
+        <div id="parent">
+            <div id="child">
+                child
+            </div>
+            <div id="other">
+                other
+            </div>
+        </div>
+    </div>
     <script src="./app2.js"></script>
 </body>
 </html>

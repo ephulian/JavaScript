@@ -1,10 +1,9 @@
-const heading = document.querySelector('h2')
+const child = document.querySelector('#child')
 
-heading.addEventListener('click', e => {
-    console.log(e);
-    e.currentTarget.classList.contains('blue') ? e.currentTarget.classList.remove('blue') : e.currentTarget.classList.add('blue')
-    e.offsetX
-    console.log(e.offsetX);
-})
+child.addEventListener('click', function(){}, true)
 
-// currentTarget selects the element which invoked the event
+// last parameter of event listeners is an answer to getCapturing
+
+// with true - it logs the event as it propagates down the tree
+
+// with false - it logs the event as it bubbles up the tree
