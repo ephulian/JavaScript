@@ -1,21 +1,9 @@
-const container = document.querySelector('.container')
-const btn = document.querySelector('.btn')
+// localStorage.setItem('name', 'john')
+// sessionStorage.setItem('name', 'john')
 
-function sayHello() {
-    console.log('hello');
-}
+localStorage.setItem('name', 'john')
+localStorage.getItem('name')
+localStorage.removeItem('name')
+localStorage.clear
 
-btn.addEventListener('click', () => {
-    const element = document.createElement('h1');
-    element.classList.add('heading')
-    element.textContent = "im inside the container too"
-    container.appendChild(element)
-})
-
-container.addEventListener('click', (event) => {
-    if(event.target.classList.contains('heading')){
-        console.log('hello');
-    }
-})
-
-// Dynamically created content can be targeted by catching the event bubbling on the nearest static content box
+console.log(localStorage.getItem('name'));
