@@ -1,9 +1,21 @@
-const child = document.querySelector('#child')
+const container = document.querySelector('.container')
+const btn = document.querySelector('.btn')
 
-child.addEventListener('click', function(){}, true)
+function sayHello() {
+    console.log('hello');
+}
 
-// last parameter of event listeners is an answer to getCapturing
+btn.addEventListener('click', () => {
+    const element = document.createElement('h1');
+    element.classList.add('heading')
+    element.textContent = "im inside the container too"
+    container.appendChild(element)
+})
 
-// with true - it logs the event as it propagates down the tree
+container.addEventListener('click', (event) => {
+    if(event.target.classList.contains('heading')){
+        console.log('hello');
+    }
+})
 
-// with false - it logs the event as it bubbles up the tree
+// Dynamically created content can be targeted by catching the event bubbling on the nearest static content box
