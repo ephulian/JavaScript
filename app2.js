@@ -1,9 +1,9 @@
-// localStorage.setItem('name', 'john')
-// sessionStorage.setItem('name', 'john')
+const friends = ['john', 'peter', 'bobby', 'jane']
 
-localStorage.setItem('name', 'john')
-localStorage.getItem('name')
-localStorage.removeItem('name')
-localStorage.clear
+localStorage.setItem('friends', JSON.stringify(friends))
 
-console.log(localStorage.getItem('name'));
+const values = localStorage.getItem('friends')
+console.log(JSON.parse(values)[0]);
+
+// JSON.stringify(array) to store in JSON format
+// JSON.parse(array)[index] to get item at index
