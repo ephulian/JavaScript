@@ -1,23 +1,29 @@
-// this points to the left of dot
+const btn1 = document.querySelector('.btn-1')
+const btn2 = document.querySelector('.btn-2')
+
+function showThis(){
+    console.log(this);
+}
 
 const john = {
-    firstName: 'Kiril',
-    lastName: 'Komitski',
-    fullName: function(){
-        // console.log(`My full name is Kiril Komitski`);
-        console.log(`My full name is ${this.firstName} ${this.lastName}`);
-    }
+    name: 'john',
+    showThis:showThis,
 }
 
-// this does NOT work with arrow syntax
 const bob = {
-    firstName: 'Bob',
-    lastName: 'Builder',
-    fullName: ()=> {
-        // console.log(`My full name is Bob Builder`);
-        console.log(`My full name is ${this.firstName} ${this.lastName}`);
-    }
+    name: 'bob',
+    showThis:showThis,
 }
 
-john.fullName();
-// bob.fullName();
+// john.showThis()
+// bob.showThis()
+
+// here this refers to the event target
+btn1.addEventListener('click', showThis)
+
+// here 'this' referes to global because it's a new function called
+btn2.addEventListener('click', function(){
+    showThis()
+})
+
+// !!!!!! this keyword refers to the current execution context !!!!!!
