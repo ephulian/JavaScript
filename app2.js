@@ -1,29 +1,25 @@
-const btn1 = document.querySelector('.btn-1')
-const btn2 = document.querySelector('.btn-2')
-
-function showThis(){
-    console.log(this);
+// Factory function
+function createPerson(firstName, lastName){
+    return {
+        firstName,
+        lastName,
+        fullName: function(){
+            console.log(`my full name is ${this.firstName} ${this.lastName}`);
+        }
+    }
 }
 
-const john = {
-    name: 'john',
-    showThis:showThis,
+const peter = createPerson('peter', 'ilfried');
+peter.fullName()
+
+// Constructor function
+function Person(firstName, lastName){
+    this.firstName = firstName
+    this.lastName = lastName
+    this.fullName = function (){
+        console.log(`full name: ${this.firstName} ${this.lastName}`);
+    }
 }
 
-const bob = {
-    name: 'bob',
-    showThis:showThis,
-}
-
-// john.showThis()
-// bob.showThis()
-
-// here this refers to the event target
-btn1.addEventListener('click', showThis)
-
-// here 'this' referes to global because it's a new function called
-btn2.addEventListener('click', function(){
-    showThis()
-})
-
-// !!!!!! this keyword refers to the current execution context !!!!!!
+const james = new Person('james', 'malcovich'); // new creates new instance of object and points to it
+console.log(james.firstName);
