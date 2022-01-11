@@ -1,14 +1,6 @@
-const foo = function(){};
-
-// console.log(foo.call);
-
 const john = {
     name:'john',
     age:24,
-    greet: function(){
-        console.log(this);
-        console.log(`hello im ${this.name} and ${this.age} old`);
-    }
 }
 
 const susan = {
@@ -16,19 +8,23 @@ const susan = {
     age: 21,
 }
 
-const greet = function(){
+function greet(city, country){
         console.log(this);
-        console.log(`hello im ${this.name} and ${this.age} old`);
+        console.log(`hello im ${this.name} and ${this.age} old and I'm in ${city}, ${country}`);
     }
 // john.greet()
 
-// first argument for .call method is - the value to be represented by this keyword
-greet.call(susan)
+// first argument for .call and .apply method is - the value to be represented by this keyword
+// apply is the same but it take the arguments as an array
+
+// example Prototype.apply(this, [arg1, arg2, arg3])
+greet.apply(susan, ['san-diego', 'us'])
+greet.apply(john)
+greet.apply({name: 'peterosk', age: 42})
+
+// first argument is 'this' pointer and all other are list of arguments 
+
+// example Prototype.apply(this, arg1, arg2, arg3)
+greet.call(susan, 'san-diego', 'us')
 greet.call(john)
-
-// here secondGreet is mapped to greet function itself which in turn targets the current context because of 'this'
-
-
-// by moving it into the new variable and using .call with susan as 'this' the context now is susan
-const secondGreet = john.greet
-secondGreet.call(susan)
+greet.call({name: 'peterosk', age: 42})
