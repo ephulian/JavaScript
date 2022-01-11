@@ -6,28 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div {
-            font-size:2rem;
-        }
-
-        #parent {
-            border: 2px solid green;
-            height: 400px;
-        }
-
-        #child {
-            border: 2px solid blue;
-        }
-        #other {
-            border: 2px solid red;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- <h1 class="heading">Im sitting in the container</h1> -->
+    <div class="count-container">
+        <h2 class="count">current count is:</h1>
+        <h1 class="current-count" id="current-count">0</h1>
     </div>
-    <button class="btn">click</button>
+    <div class="btn-container">
+        <button class="decrease" id="decrease-btn">decrease</button>
+        <button class="reset" id="reset-btn">reset</button>
+        <button class="increase" id="increase-btn">increase</button>
+    </div>
     <script src="./app2.js"></script>
 </body>
 </html>

@@ -1,9 +1,28 @@
-const friends = ['john', 'peter', 'bobby', 'jane']
+const person = {
+    name: 'john',
+    age: 25,
+    married: true,
+    siblings: ['anna', 'james', 'peter'],
+    greet: (name) => {
+        console.log(`hello, my name is ${name}`);
+    },
+    sayHello(name){
+        console.log(`hello, my name is ${name}`);
+    }
+}
 
-localStorage.setItem('friends', JSON.stringify(friends))
+// Get object property value
+console.log(person.name);
 
-const values = localStorage.getItem('friends')
-console.log(JSON.parse(values)[0]);
+// Add new object property
+person.city = 'chicago'
 
-// JSON.stringify(array) to store in JSON format
-// JSON.parse(array)[index] to get item at index
+// Change objet property
+person.age = 60
+
+// Delete property 
+delete person.siblings
+
+// Check if deleted
+const married = delete person.married
+console.log(married); // Returns - True/False
