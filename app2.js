@@ -1,17 +1,34 @@
-class Account { // always uppercase for class names
-    constructor(name, initialBalance){
-        // all values here are unique to the specific instance
-        // they need to be declared
-        this.name = name; // parameters (to be args)
-        this.balance = initialBalance; // parameters (to be args)
+const foo = function(){};
+
+// console.log(foo.call);
+
+const john = {
+    name:'john',
+    age:24,
+    greet: function(){
+        console.log(this);
+        console.log(`hello im ${this.name} and ${this.age} old`);
     }
-    // all values here are applied to all instances
-    bank = 'HSBC' // !!! dont need .this keyword !!!
-    deposit(amount){ // dont need function declaration
-        this.balance += amount; // to add methods
-    }
-    checkBalance(){
-        console.log(`${this.name}'s balance is ${this.balance}`);
-    }
-    any(){}
 }
+
+const susan = {
+    name:'susan',
+    age: 21,
+}
+
+const greet = function(){
+        console.log(this);
+        console.log(`hello im ${this.name} and ${this.age} old`);
+    }
+// john.greet()
+
+// first argument for .call method is - the value to be represented by this keyword
+greet.call(susan)
+greet.call(john)
+
+// here secondGreet is mapped to greet function itself which in turn targets the current context because of 'this'
+
+
+// by moving it into the new variable and using .call with susan as 'this' the context now is susan
+const secondGreet = john.greet
+secondGreet.call(susan)
