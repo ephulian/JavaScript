@@ -6,11 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* flex-direction: column; */
+            background-color: rgba(247, 243, 209, 0.817);
+            font-family: orbitron, sans-serif;
+            text-transform: uppercase;
+        }
+
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: lightskyblue;
+            padding: 2rem;
+            margin: 15px;
+            border: 5px solid black;
+            border-radius: 25px;
+            float: left;
+        }
+
+        .button-container{
+            margin-top: 25px;
+        }
+
+        button{
+            border: 2.5px solid black;
+            margin: 5px;
+            padding: 5px 15px;
+            border-radius: 5px;
+            background-color: moccasin;
+            font-family: orbitron, sans-serif;
+            font-weight:700;
+            text-transform: uppercase;
+            transition: all 0.2s ease-out;
+        }
+
+        button:hover{
+            background-color: orange;
+        }
+
+        button:active{
+            border: 1px solid black;
+            /* padding: 7px 17px; */
+        }
+
+        .value{
+            font-size: 40px;
+        }
     </style>
 </head>
 <body>
-    <button class="btn-1">click me</button>
-    <button class="btn-2">click me</button>
-    <script src="./app2.js"></script>
+    <!-- first counter -->
+    <div class="container first-counter">
+        <h2>first counter</h2>
+        <span class="value">0</span>
+        <div class="button-container">
+            <button class="btn decrease">decrease</button>
+            <button class="btn resset">reset</button>
+            <button class="btn increase">increase</button>
+        </div>
+    </div>
+    <!-- second counter -->
+    <div class="container second-counter">
+        <h2>second counter</h2>
+        <span class="value">0</span>
+        <div class="button-container">
+            <button class="btn decrease">decrease</button>
+            <button class="btn resset">reset</button>
+            <button class="btn increase">increase</button>
+        </div>
+    </div>
+    <script src="./app2(under the hood).js"></script>
 </body>
 </html>

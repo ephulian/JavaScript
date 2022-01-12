@@ -1,35 +1,46 @@
-const john = {
-    name:'john',
-    age:24,
-}
+class Counter {
+    constructor(element, value){
+        this.counter = element;
+        this.value = value;
+        this.resetBtn = element.querySelector('.resset')
+        this.increaseBtn = element.querySelector('.increase')
+        this.decreaseBtn = element.querySelector('.decrease')
+        this.valueDOM = element.querySelector('.value')
+        this.valueDOM.innerHTML = this.value
 
-const susan = {
-    name:'susan',
-    age: 21,
-}
+        // bind this to all functions
+        this.increase = this.increase.bind(this)
+        this.decrease = this.decrease.bind(this)
+        this.reset = this.reset.bind(this)
 
-function greet(city, country){
-        console.log(this);
-        console.log(`hello im ${this.name} and ${this.age} old and I'm in ${city}, ${country}`);
+        this.increaseBtn.addEventListener('click', this.increase)
+        this.decreaseBtn.addEventListener('click', this.decrease)
+        this.resetBtn.addEventListener('click', this.reset)
     }
-// john.greet()
 
-// first argument for .call and .apply method is - the value to be represented by this keyword
-// apply is the same but it take the arguments as an array
+    increase(){
+        this.value++
+        this.valueDOM.innerHTML = this.value
+    }
 
-// example Function.apply(this, [arg1, arg2, arg3])
-greet.apply(susan, ['san-diego', 'us'])
-greet.apply(john)
-greet.apply({name: 'peterosk', age: 42})
+    decrease(){
+        this.value--
+        this.valueDOM.innerHTML = this.value
+    }
 
-// first argument is 'this' pointer and all other are list of arguments 
+    reset(){
+        this.value = 0
+        this.valueDOM.innerHTML = this.value
+    }
+}
 
-// example Function.apply(this, arg1, arg2, arg3)
-greet.call(susan, 'san-diego', 'us')
-greet.call(john)
-greet.call({name: 'peterosk', age: 42})
+function getElement (selection){
+    const element = document.querySelector(selection);
+    if(element){
+        return element
+    }
+    throw new Error(`Please check "${selection}" selector, no such element exist in document.`)
+}
 
-// with bind you assign to call later
-// example Function.bind(this, arg1, arg2)
-const susanGreet = greet.bind(susan, 'toronto', 'france')
-susanGreet()
+const firstCounter = new Counter(getElement('.first-counter'), 100)
+const secondCounter = new Counter(getElement('.second-counter'), 300)
