@@ -1,9 +1,10 @@
-function boilingWater() {
-	console.log('boiling...');
-	for (let i = 0; i < 1000; i++) {
-		console.log('still boiling');
-	}
-	console.log('boiled');
-}
+boilWater(5000);
+console.log('chop onion');
 
-boilingWater();
+function boilWater(time) {
+	console.log('boiling...');
+	setTimeout(() => {
+		// setTimeout is a BROWSER function, not JS
+		console.log('boiled');
+	}, time);
+}
