@@ -5,23 +5,32 @@ const three = document.querySelector('.three');
 const btn = document.querySelector('.btn');
 const btn2 = document.querySelector('.btn-2');
 
-btn.addEventListener('click', () => {
-	// console.log('you clicked BTN');
-	setTimeout(() => {
-		one.style.color = 'red';
-		setTimeout(() => {
-			two.style.color = 'green';
-			setTimeout(() => {
-				three.style.color = 'blue';
-			}, 1000);
-		}, 1000);
-	}, 1000);
+// Set-up a promise object with resolve and reject options
+// Inside Promise object create some functionality
+// Depending on the outcome of said functionality set an output value
+// resolve for promise functionality fullfilled
+// reject for promise functionality unfullfilled
+
+const promise = new Promise((resolve, reject) => {
+	let value = false; // functionality
+	if (value) {
+		resolve([1, 2, 3]); // returns for .then
+	} else {
+		reject(() => {
+			// returns for .catch
+			console.log('this is called now');
+		});
+	}
 });
 
-btn2.addEventListener('click', () => {
-	one.style.color = 'black';
-	two.style.color = 'black';
-	three.style.color = 'black';
-});
+// Run the promise functionality
+// If 'resolved' run .then
+// If 'rejected' run .catch
 
-console.log(`im second`);
+promise
+	.then((result) => {
+		console.log(result);
+	})
+	.catch((result) => {
+		console.log(result);
+	});
