@@ -9,23 +9,22 @@ const btn = document.querySelector('.btn');
 const btn2 = document.querySelector('.btn-2');
 
 btn.addEventListener('click', () => {
-	console.log(loadImage(url));
-	loadImage(url)
-		.then((data) => {
-			container.appendChild(data);
-		})
-		.catch(error);
+	addColor(1000, one, 'blue').then(() =>
+		addColor(1000, two, 'purple').then(() =>
+			addColor(1000, three, 'lightgreen')
+		)
+	);
 });
 
-function loadImage(url) {
+function addColor(time, element, color) {
 	return new Promise((resolve, reject) => {
-		let img = new Image();
-		img.addEventListener('load', () => {
-			return resolve(img);
-		});
-		img.addEventListener('error', () => {
-			return reject(new Error(`Failed to load image from the ${url}`));
-		});
-		img.src = url;
+		if (element) {
+			setTimeout(() => {
+				element.style.color = color;
+				resolve();
+			}, time);
+		} else {
+			reject(new Error(`No such element ${element}`));
+		}
 	});
 }
