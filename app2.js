@@ -1,9 +1,6 @@
-// Array destructuring
+// Default parameters
 
-const fruits = ['orange', 'apple', 'lemon', 'banana'];
+const sayHi = (person = 'bob') => console.log(`My name is ${person}`);
 
-const [orange, apple, lemon] = fruits;
-
-console.log(orange);
-console.log(apple);
-console.log(lemon);
+sayHi(); //?
+sayHi('john');
