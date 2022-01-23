@@ -1,15 +1,27 @@
-const xhr = new XMLHttpRequest();
+const countriesAPI = 'https://restcountries.com/v3.1/all';
 
-// xhr.open('GET', 'https://restcountries.com/v3.1/all');
-xhr.open('GET', './api.sample.txt');
-xhr.send();
-xhr.onreadystatechange = function () {
-	if (xhr.readyState === 4 && xhr.status === 200) {
-		console.log('done');
-	} else {
-		console.log({
-			status: xhr.status,
-			text: xhr.statusText,
-		});
+async function allCountriesAPI(url) {
+	try {
+		const countries = await fetch(url);
+		const response = await countries.json();
+
+		return response;
+	} catch (e) {
+		console.log(e);
 	}
+
+	// return response;
+}
+
+const myData = await allCountriesAPI(countriesAPI);
+
+const byPopulation = (a, b) => {
+	return parseInt(a.population) - parseInt(b.population);
 };
+
+const armenia = myData.find((country) => country.name.common == 'Armenia');
+
+const countriesByPopulation = myData.sort(byPopulation).reverse();
+
+console.log(myData);
+console.log(armenia);
