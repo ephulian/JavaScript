@@ -1,89 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				background-color: rgba(247, 243, 209, 0.817);
+				font-family: orbitron, sans-serif;
+				text-transform: uppercase;
+				/* color: white; */
+			}
 
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background-color: rgba(247, 243, 209, 0.817);
-            font-family: orbitron, sans-serif;
-            text-transform: uppercase;
-            /* color: white; */
-        }
+			.container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				background-color: lightskyblue;
+				padding: 2rem;
+				margin: 15px;
+				border: 5px solid black;
+				border-radius: 25px;
+				float: left;
+			}
 
-        .container{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background-color: lightskyblue;
-            padding: 2rem;
-            margin: 15px;
-            border: 5px solid black;
-            border-radius: 25px;
-            float: left;
-        }
+			.button-container {
+				margin-top: 25px;
+			}
 
-        .button-container{
-            margin-top: 25px;
-        }
+			button {
+				border: 2.5px solid black;
+				margin: 5px;
+				padding: 5px 15px;
+				border-radius: 5px;
+				background-color: moccasin;
+				font-family: orbitron, sans-serif;
+				font-weight: 700;
+				text-transform: uppercase;
+				transition: all 0.2s ease-out;
+			}
 
-        button{
-            border: 2.5px solid black;
-            margin: 5px;
-            padding: 5px 15px;
-            border-radius: 5px;
-            background-color: moccasin;
-            font-family: orbitron, sans-serif;
-            font-weight:700;
-            text-transform: uppercase;
-            transition: all 0.2s ease-out;
-        }
+			button:hover {
+				background-color: orange;
+			}
 
-        button:hover{
-            background-color: orange;
-        }
+			button:active {
+				border: 1px solid black;
+				/* padding: 7px 17px; */
+			}
 
-        button:active{
-            border: 1px solid black;
-            /* padding: 7px 17px; */
-        }
+			.value {
+				font-size: 40px;
+			}
 
-        .value{
-            font-size: 40px;
-        }
-
-        .img-container{
-            width:100%;
-            position:absolute;
-            z-index: -1;
-        }
-    </style>
-</head>
-<body>
-    <h1>Async JS</h1>
-    <h1 class="one">one</h1>
-    <h1 class="two">two</h1>
-    <h1 class="three">three</h1>
-    <button class="btn">CLICK</button>
-    <button class="btn-2">RESET</button>
-    <div class="img-container">
-        
-        <!-- <img src="https://source.unsplash.com/random" alt="random image"> -->
-    </div>
-    <!-- <script src="./app2(under the hood).js"></script> -->
-    <script type ="module" src="./app2.js">
-    </script>
-</body>
+			.img-container {
+				width: 100%;
+				position: absolute;
+				z-index: -1;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Async JS</h1>
+		<h1 class="one">one</h1>
+		<h1 class="two">two</h1>
+		<h1 class="three">three</h1>
+		<button class="btn">CLICK</button>
+		<button class="btn-2">RESET</button>
+		<div class="img-container">
+			<!-- <img src="https://source.unsplash.com/random" alt="random image"> -->
+		</div>
+		<!-- <script src="./app2(under the hood).js"></script> -->
+		<script type="module" src="./app2.js"></script>
+		<!-- <script type="module" src="./lodash.js"></script> -->
+	</body>
 </html>
