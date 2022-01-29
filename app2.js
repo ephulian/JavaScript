@@ -16,6 +16,7 @@ const sumPairs = (ints, s) => {
 				yInd.push(newArray.indexOf(n));
 			}
 		});
+		// hello
 
 		i++;
 	});
